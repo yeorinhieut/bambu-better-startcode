@@ -1,2 +1,2 @@
-# bambu-better_startcode
-Better Start gcode for Bambulab
+# bambucode
+Better startcode for Bambulab Printers
