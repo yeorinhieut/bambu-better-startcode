@@ -1,3 +1,7 @@
+; Bambucode for A1 mini v0.1-20241021
+; Adaptive Purge Line is based on https://www.printables.com/model/1035759-adaptive-purge-for-any-3d-printer-using-slicer-var
+
+
 ;===== machine: A1 mini =========================
 ;===== date: 20240204 =====================
 
