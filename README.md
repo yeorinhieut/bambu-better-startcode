@@ -17,9 +17,9 @@ Currently supported printers:
 
 > **Note**: Support for other Bambulab printer models is under development and will be added soon.
 
-## Documentation
+## Installing
 
-For detailed information and updates, visit our [official documentation](https://bambu.pages.dev).
+[Link](https://bambu.pages.dev).
 
 ## Contributing
 
