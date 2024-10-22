@@ -113,6 +113,8 @@ M620 S[initial_no_support_extruder]A   ; switch material if AMS exist
     G1 X0 F30000 ;wipe and shake
     G1 X-13.5 F3000
     G1 X0 F12000 ;wipe and shake
+    G1 X-13.5 F3000
+    G1 X0 F12000 ;wipe and shake
     G1 X0 F30000
     G1 X-13.5 F3000
     M109 S{nozzle_temperature_initial_layer[initial_no_support_extruder]-40}
@@ -215,7 +217,7 @@ G380 S3 Z-5 F1200
 
 G1 Z5 F30000
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-G1 X25 Y175 F30000.1 ;Brush material
+G1 X25 Y175 F30000.1 ;Move to brush material
 G1 Z0.2 F30000.1
 G1 Y185
 G91
@@ -229,7 +231,24 @@ G1 X30
 G1 Y1.5
 G1 X-30
 G90
-M83
+
+; Start vertical wiping from center of brush
+G91                  
+G1 X15 F30000        ; Move to center of brush
+G1 Y-5 F30000        ; Move down 5mm
+G1 Y10               ; Move up 10mm (to +5mm from origin)
+G1 X2                ; Slight right shift
+G1 Y-10              ; Move down 10mm (to -5mm from origin)
+G1 Y10               ; Move up 10mm
+G1 X2                ; Slight right shift
+G1 Y-10              ; Move down 10mm
+G1 Y10               ; Move up 10mm
+G1 X2                ; Slight right shift
+G1 Y-10              ; Move down 10mm
+G1 Y5                ; Return to center
+G90                  ; Back to absolute positioning
+M83                  ; Relative extrusion mode
+
 
 G1 Z5 F3000
 G0 X50 Y175 F20000 ; find a soft place to home
@@ -400,7 +419,6 @@ M622 J1
 
 G0 Y0 Z0 F20000
 M400
-M106 P1 S0
 
     G1 X-13.5 Y0 Z10 F10000
     M400
@@ -412,6 +430,8 @@ M106 P1 S0
     G1 X0 F18000
     G1 X-13.5 F3000
     G1 X0 F18000 ;wipe and shake
+    G1 X-13.5 F3000
+    G1 X0 F12000 ;wipe and shake
     G1 X-13.5 F3000
     G1 X0 F12000 ;wipe and shake
     G1 X-13.5 F3000
@@ -521,5 +541,4 @@ T1000
 
 M211 X0 Y0 Z0 ;turn off soft endstop
 M1007 S1
-
 
