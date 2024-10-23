@@ -231,21 +231,20 @@ G1 X30
 G1 Y1.5
 G1 X-30
 G90
-
 ; Start vertical wiping from center of brush
 G91                  
 G1 X15 F30000        ; Move to center of brush
-G1 Y-5 F30000        ; Move down 5mm
-G1 Y10               ; Move up 10mm (to +5mm from origin)
+G1 Y-3 F10000        ; Move down 3mm (속도 감소)
+G1 Y6                ; Move up 6mm (to +3mm from origin)
 G1 X2                ; Slight right shift
-G1 Y-10              ; Move down 10mm (to -5mm from origin)
-G1 Y10               ; Move up 10mm
+G1 Y-6               ; Move down 6mm (to -3mm from origin)
+G1 Y6                ; Move up 6mm
 G1 X2                ; Slight right shift
-G1 Y-10              ; Move down 10mm
-G1 Y10               ; Move up 10mm
+G1 Y-6               ; Move down 6mm
+G1 Y6                ; Move up 6mm
 G1 X2                ; Slight right shift
-G1 Y-10              ; Move down 10mm
-G1 Y5                ; Return to center
+G1 Y-6               ; Move down 6mm
+G1 Y3                ; Return to center
 G90                  ; Back to absolute positioning
 M83                  ; Relative extrusion mode
 
